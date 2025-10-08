@@ -210,9 +210,9 @@ export default function Projects() {
   }, [activeCategory]);
 
   return (
-    <section ref={sectionRef} id="projects" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted/50">
-      <div className="container mx-auto max-w-7xl">
-        <h2 className="projects-title text-4xl md:text-5xl font-bold text-center mb-12">
+    <section ref={sectionRef} id="projects" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted/50 overflow-hidden">
+      <div className="container mx-auto max-w-7xl w-full">
+        <h2 className="projects-title text-4xl md:text-5xl font-bold text-center mb-12 break-words">
           Featured Projects
         </h2>
 
@@ -254,7 +254,7 @@ export default function Projects() {
               </div>
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className={project.featured ? 'text-primary' : ''}>
+                  <CardTitle className={`break-words ${project.featured ? 'text-primary' : ''}`}>
                     {project.title}
                   </CardTitle>
                   {project.isPrivateRepo && (
@@ -264,7 +264,7 @@ export default function Projects() {
                     </Badge>
                   )}
                 </div>
-                <CardDescription>{project.description}</CardDescription>
+                <CardDescription className="break-words">{project.description}</CardDescription>
                 {project.role && (
                   <div className="mt-2">
                     <Badge variant="secondary" className="text-xs">

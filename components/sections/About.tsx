@@ -153,12 +153,12 @@ export default function About() {
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="about-title text-4xl md:text-5xl font-bold text-center mb-6">
+    <section ref={sectionRef} id="about" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="container mx-auto max-w-6xl w-full">
+        <h2 className="about-title text-4xl md:text-5xl font-bold text-center mb-6 break-words">
           About Me
         </h2>
-        <p className="about-description text-lg md:text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-16">
+        <p className="about-description text-lg md:text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-16 break-words px-2">
           I&apos;m a passionate developer and designer with a keen eye for detail and a love for creating
           meaningful digital experiences. With years of experience in the field, I specialize in
           building modern web applications that are both beautiful and functional.

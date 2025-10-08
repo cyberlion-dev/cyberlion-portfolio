@@ -160,12 +160,12 @@ export default function Contact() {
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="contact-title text-4xl md:text-5xl font-bold text-center mb-6">
+    <section ref={sectionRef} id="contact" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="container mx-auto max-w-6xl w-full">
+        <h2 className="contact-title text-4xl md:text-5xl font-bold text-center mb-6 break-words">
           Let&apos;s Work Together
         </h2>
-        <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+        <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-16 break-words px-2">
           Have a project in mind? I&apos;d love to hear about it. Drop me a message and let&apos;s create
           something amazing together.
         </p>
@@ -176,20 +176,20 @@ export default function Contact() {
               <Card key={index} className="contact-info-card">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-full bg-primary text-primary-foreground">
+                    <div className="p-3 rounded-full bg-primary text-primary-foreground shrink-0">
                       {info.icon}
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <CardTitle className="text-lg">{info.title}</CardTitle>
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground hover:text-primary transition-colors break-all text-sm"
                         >
                           {info.details}
                         </a>
                       ) : (
-                        <CardDescription>{info.details}</CardDescription>
+                        <CardDescription className="break-words">{info.details}</CardDescription>
                       )}
                     </div>
                   </div>
@@ -290,7 +290,7 @@ export default function Contact() {
                       <XCircle className="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
                     )}
                     <p
-                      className={`text-sm ${
+                      className={`text-sm break-words ${
                         submitStatus === 'success' ? 'text-green-700 dark:text-green-300' : 'text-red-700 dark:text-red-300'
                       }`}
                     >

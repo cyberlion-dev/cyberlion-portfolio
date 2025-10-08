@@ -112,13 +112,13 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 overflow-hidden w-full"
     >
       {/* Grid Background */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] overflow-hidden"></div>
 
       {/* Animated Floating Shapes */}
-      <div ref={shapesRef} className="absolute inset-0 -z-5 pointer-events-none">
+      <div ref={shapesRef} className="absolute inset-0 -z-5 pointer-events-none overflow-hidden">
         {/* Circle 1 */}
         <div className="absolute top-20 left-[10%] w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-purple-500/20 blur-2xl" />
 
@@ -138,10 +138,10 @@ export default function Hero() {
         <div className="absolute top-[30%] left-[5%] w-20 h-20 rotate-12 bg-gradient-to-br from-primary/10 to-purple-500/10 blur-xl" />
       </div>
 
-      <div className="container mx-auto max-w-5xl text-center">
+      <div className="container mx-auto max-w-5xl text-center w-full px-2">
         <h1
           ref={titleRef}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 break-words"
         >
           Developer, Designer &<br />
           <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -151,7 +151,7 @@ export default function Hero() {
 
         <p
           ref={subtitleRef}
-          className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12"
+          className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12 break-words px-2"
         >
           Hi, I&apos;m <span className="font-semibold text-foreground">Jordan Boyce</span>.
           I craft beautiful digital experiences that blend creativity with functionality.
