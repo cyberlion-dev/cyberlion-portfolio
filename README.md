@@ -138,6 +138,48 @@ Configure EmailJS for the contact form:
 
 See `EMAILJS_SETUP.md` for detailed instructions.
 
+## Deployment
+
+### Firebase Hosting (Recommended)
+
+This project is **ready for Firebase hosting**! It's configured for static export with all optimizations in place.
+
+**Quick Deploy:**
+```bash
+# 1. Build static site
+npm run build
+
+# 2. Install Firebase CLI
+npm install -g firebase-tools
+
+# 3. Login and initialize
+firebase login
+firebase init
+
+# 4. Deploy
+firebase deploy
+```
+
+See `FIREBASE_DEPLOYMENT.md` for complete deployment guide including:
+- Step-by-step setup
+- Custom domain configuration
+- Environment variables
+- Performance optimization
+- Troubleshooting tips
+
+**Build Output:**
+- Static files generated in `out/` directory
+- Total size: ~186KB (optimized)
+- All images < 200KB
+
+### Other Hosting Options
+
+The static export (`out/` directory) can also be deployed to:
+- **Vercel** - `npm run build` then connect GitHub repo
+- **Netlify** - Drag & drop `out/` folder or connect repo
+- **GitHub Pages** - Deploy `out/` directory to gh-pages branch
+- **Any static host** - Upload contents of `out/` directory
+
 ## Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs)
