@@ -1,0 +1,221 @@
+# JB Portfolio - Claude Context
+
+## Project Overview
+A stunning portfolio website for Jordan Boyce showcasing development and design projects. Built with modern web technologies and smooth animations.
+
+## Tech Stack
+- **Framework**: Next.js 15.5.4 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **UI Components**: shadcn/ui
+- **Animations**: GSAP with ScrollTrigger
+- **Build Tool**: Turbopack
+- **Package Manager**: npm
+
+## Project Structure
+```
+jb-portfolio/
+├── app/
+│   ├── layout.tsx          # Root layout with fonts and metadata
+│   ├── page.tsx             # Main page with all sections
+│   └── globals.css          # Global styles and Tailwind config
+├── components/
+│   ├── Navigation.tsx       # Fixed navigation with mobile menu
+│   ├── sections/
+│   │   ├── Hero.tsx         # Landing section with animations
+│   │   ├── About.tsx        # Skills and tech stack
+│   │   ├── Projects.tsx     # Project showcase with filtering
+│   │   └── Contact.tsx      # Contact form and info
+│   └── ui/                  # shadcn/ui components
+│       ├── button.tsx
+│       ├── card.tsx
+│       └── badge.tsx
+├── lib/
+│   └── utils.ts             # Utility functions
+└── public/                  # Static assets
+```
+
+## Implemented Features
+
+### ✅ Navigation
+- Fixed navigation bar with scroll effect (becomes opaque on scroll)
+- Mobile responsive hamburger menu
+- Smooth section anchors
+- "Get in Touch" CTA button
+
+### ✅ Hero Section
+- Animated headline with gradient text effect
+- Introductory text
+- Dual CTA buttons (View Work / Get in Touch)
+- Social media links (GitHub, LinkedIn, Email)
+- Animated scroll indicator
+- Grid background pattern
+- GSAP entrance animations
+
+### ✅ About Section
+- Four skill cards (Development, Design, Performance, Collaboration)
+- Technology badge showcase (React, Next.js, TypeScript, etc.)
+- Scroll-triggered GSAP animations
+- Responsive grid layout
+
+### ✅ Projects Section
+- Six sample project cards with images
+- Category filtering (All, Web App, Design)
+- Project cards include:
+  - Project image with hover zoom effect
+  - Title and description
+  - Technology tags
+  - Live Demo and GitHub links
+- Scroll-triggered animations
+- Responsive grid layout
+
+### ✅ Contact Section
+- Contact information cards (Email, Phone, Location)
+- Contact form with:
+  - Name input
+  - Email input
+  - Message textarea
+  - Submit button
+- Form validation
+- Scroll-triggered animations
+- Copyright footer
+
+## Customization Needed
+
+### 🔄 Replace Sample Data
+
+1. **Projects** (`components/sections/Projects.tsx`):
+   - Replace sample projects array with actual project data
+   - Update project images (currently using Unsplash placeholders)
+   - Update live URLs and GitHub links
+   - Adjust categories as needed
+
+2. **Contact Info** (`components/sections/Contact.tsx`):
+   - Update email address
+   - Update phone number
+   - Update location
+   - Configure form submission endpoint
+
+3. **Social Links** (`components/sections/Hero.tsx`):
+   - Update GitHub URL
+   - Update LinkedIn URL
+   - Update email address
+
+4. **Personal Info**:
+   - Update name throughout if needed
+   - Update job title/tagline in Hero section
+   - Update About section description
+
+### 🎨 Styling Customization
+
+**Color Scheme** (`app/globals.css`):
+- Primary colors are defined in CSS variables
+- Dark mode colors are configured
+- Adjust gradient colors in Hero section if needed
+
+**Fonts** (`app/layout.tsx`):
+- Currently using Geist Sans and Geist Mono from Google Fonts
+- Can be changed to other fonts
+
+**Border Radius** (`app/globals.css`):
+- Controlled by `--radius` variable (currently 0.625rem)
+
+## Development Commands
+
+```bash
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linter
+npm run lint
+```
+
+## Dev Server
+- Local: http://localhost:3000
+- Network: http://172.17.80.1:3000
+
+## Animation Details
+
+### GSAP Animations Used:
+1. **Hero Section**: Staggered entrance animations for title, subtitle, CTAs, and social icons
+2. **About Section**: Scroll-triggered animations for title, description, skill cards, and badges
+3. **Projects Section**: Filter animation and project card animations on category change
+4. **Contact Section**: Scroll-triggered animations for form and info cards
+
+### Animation Pattern:
+- Most animations use `power4.out` easing
+- Scroll triggers set at "top 80%" for most sections
+- Stagger effects used for lists and grids
+- Hover effects on cards and buttons
+
+## Component Dependencies
+
+### shadcn/ui Components Installed:
+- `button` - Used in navigation, hero, projects, and contact
+- `card` - Used in about, projects, and contact sections
+- `badge` - Used in about and projects for tags
+
+### Icons:
+- `lucide-react` - Comprehensive icon library
+- Icons used: Menu, X, ArrowDown, Code2, Palette, Rocket, Users, Github, Linkedin, Mail, ExternalLink, Send, MapPin, Phone
+
+## Environment Setup
+- Node.js version: Compatible with Next.js 15
+- React version: 19.1.0
+- Platform: Windows (MINGW64_NT)
+
+## Next Steps / Roadmap
+
+### Immediate Tasks:
+1. [ ] Replace sample project data with real projects
+2. [ ] Add real project images to `public/projects/` folder
+3. [ ] Update contact information
+4. [ ] Configure form submission (e.g., FormSpree, EmailJS, or API route)
+5. [ ] Update social media links
+
+### Future Enhancements:
+1. [ ] Add blog section
+2. [ ] Add testimonials section
+3. [ ] Implement project detail pages
+4. [ ] Add loading states and error handling
+5. [ ] Set up analytics (Google Analytics, Plausible, etc.)
+6. [ ] Add SEO metadata for each section
+7. [ ] Implement resume/CV download
+8. [ ] Add more interactive GSAP animations
+9. [ ] Consider adding 3D elements with Three.js
+10. [ ] Set up CI/CD pipeline
+11. [ ] Deploy to Vercel/Netlify
+
+### Performance Optimizations:
+1. [ ] Optimize images (use Next.js Image component)
+2. [ ] Implement lazy loading for images
+3. [ ] Add loading skeletons
+4. [ ] Consider code splitting for GSAP plugins
+
+## Design Patterns Used
+- Client components for interactivity (`'use client'` directive)
+- Server components by default
+- Component composition
+- Responsive-first design
+- Mobile-first approach with Tailwind
+- Scroll-triggered animations for performance
+
+## Known Issues/Limitations
+- Sample data is placeholder and needs replacement
+- Form doesn't currently submit (needs backend integration)
+- Images are external URLs (should use Next.js Image optimization)
+- No loading states for form submission
+- No error handling for failed form submission
+
+## Resources
+- [Next.js Docs](https://nextjs.org/docs)
+- [Tailwind CSS v4 Docs](https://tailwindcss.com)
+- [shadcn/ui Components](https://ui.shadcn.com)
+- [GSAP Docs](https://greensock.com/docs/)
+- [GSAP ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger)
