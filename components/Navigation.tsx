@@ -26,10 +26,10 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { href: "/#home", label: "Home" },
+    { href: "/#about", label: "About" },
+    { href: "/#projects", label: "Projects" },
+    { href: "/#contact", label: "Contact" },
   ];
 
   const handleLogoHover = (isEntering: boolean) => {
