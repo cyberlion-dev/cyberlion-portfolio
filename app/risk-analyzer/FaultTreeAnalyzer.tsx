@@ -336,8 +336,8 @@ export default function FaultTreeAnalyzer() {
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
           Interactive fault tree analysis for software systems using Boolean logic gates and probability theory.
-          Explore real-world scenarios including organizational risk assessment, payment processing, microservices, and CI/CD
-          to understand how redundancy and failure modes impact system reliability.
+          Explore real-world scenarios in payment processing, microservices, and CI/CD to understand
+          how redundancy and failure modes impact system reliability.
         </p>
       </div>
 
@@ -477,7 +477,7 @@ export default function FaultTreeAnalyzer() {
             CI/CD pipeline shows DevOps practices including infrastructure-as-code, security scanning, and deployment automation.
           </p>
           <p>
-            <strong>Business Insight:</strong> The "Large Company vs Small Team" scenario models real organizational risks that
+            <strong>Business Insight:</strong> The &quot;Large Company vs Small Team&quot; scenario models real organizational risks that
             many clients face when working with enterprise vendors. Small, focused teams (5-10 people) eliminate many failure modes:
             direct access to developers, consistent team composition, agile decision-making, and genuine client prioritization.
             This analysis demonstrates both technical capability and business acumen.
