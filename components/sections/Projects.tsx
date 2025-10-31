@@ -131,6 +131,18 @@ const projects: Project[] = [
   },
   {
     id: 10,
+    title: 'CommishCrunch',
+    description: 'No-BS Commission Calculators for Sales Pros',
+    image: './screenshots/commishcrunch.png',
+    tags: ['Next.js', 'IndexedDB', 'shadcn/ui', 'Local Storage', 'Firebase', 'TypeScript'],
+    category: 'Personal Project',
+    role: 'Creator & Lead Developer',
+    liveUrl: 'https://commishcrunch.web.app',
+    isPrivateRepo: false,
+    featured: true,
+  },
+  {
+    id: 11,
     title: 'This Portfolio',
     description: 'Modern portfolio website built with Next.js featuring GSAP animations, dark mode, interactive contact form with spam protection, and responsive design.',
     image: './screenshots/cyberlion.png',
@@ -233,9 +245,8 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <Card
               key={project.id}
-              className={`project-card overflow-hidden group hover:shadow-xl transition-all ${
-                project.featured ? 'ring-2 ring-primary shadow-lg' : ''
-              }`}
+              className={`project-card overflow-hidden group hover:shadow-xl transition-all ${project.featured ? 'ring-2 ring-primary shadow-lg' : ''
+                }`}
             >
               <div className="relative h-48 overflow-hidden bg-muted">
                 {project.featured && (
