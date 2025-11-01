@@ -205,34 +205,57 @@ function getDistributionSummary(variable: RiskVariable): string {
 }
 
 function getParameterRange(distribution: DistributionType, paramName: string, currentValue: number): { min: number; max: number; step: number } {
-  // Define reasonable ranges for different parameter types
-  const ranges: { [key: string]: { min: number; max: number; step: number } } = {
-    // Normal distribution
-    mean: { min: -50, max: 100, step: 0.1 },
-    std: { min: 0.1, max: 100, step: 0.1 },
-
-    // Lognormal distribution  
-    mu: { min: -5, max: 10, step: 0.1 },
-    sigma: { min: 0.1, max: 5, step: 0.1 },
-
-    // Uniform distribution
-    min: { min: -100, max: Math.max(currentValue * 2, 100), step: paramName.includes('Weight') ? 0.01 : 1 },
-    max: { min: Math.min(currentValue * 0.5, -100), max: 200, step: paramName.includes('Weight') ? 0.01 : 1 },
-
-    // Triangular distribution
-    mode: { min: -50, max: 150, step: paramName.includes('Weight') ? 0.01 : 1 },
-
-    // Weight parameters (allocations)
-    Weight: { min: 0, max: 1, step: 0.01 }
-  };
-
-  // Check if it's a weight parameter
+  // Check if it's a weight parameter first
   if (paramName.toLowerCase().includes('weight')) {
-    return ranges.Weight;
+    return { min: 0, max: 1, step: 0.01 };
   }
 
-  // Return specific parameter range or default
-  return ranges[paramName] || { min: 0, max: currentValue * 3, step: 0.1 };
+  // Define reasonable ranges based on parameter name and current value
+  switch (paramName) {
+    case 'mean':
+      return { min: -50, max: 100, step: 0.1 };
+
+    case 'std':
+    case 'sigma':
+      return { min: 0.1, max: Math.max(currentValue * 2, 50), step: 0.1 };
+
+    case 'mu':
+      return { min: -5, max: 10, step: 0.1 };
+
+    case 'min':
+      // For min values, allow range below current value
+      return {
+        min: Math.min(currentValue * 0.1, currentValue - 50),
+        max: Math.max(currentValue * 1.5, currentValue + 50),
+        step: paramName.includes('Weight') ? 0.01 : 1
+      };
+
+    case 'max':
+      // For max values, allow range above current value  
+      return {
+        min: Math.max(currentValue * 0.5, currentValue - 50),
+        max: Math.max(currentValue * 2, currentValue + 100),
+        step: paramName.includes('Weight') ? 0.01 : 1
+      };
+
+    case 'mode':
+      // Mode should be between reasonable bounds
+      return {
+        min: Math.min(currentValue * 0.2, currentValue - 25),
+        max: Math.max(currentValue * 2, currentValue + 50),
+        step: paramName.includes('Weight') ? 0.01 : 1
+      };
+
+    default:
+      // Default range based on current value
+      const baseMin = Math.max(0, currentValue * 0.1);
+      const baseMax = Math.max(currentValue * 3, 100);
+      return {
+        min: baseMin,
+        max: baseMax,
+        step: currentValue < 1 ? 0.01 : 0.1
+      };
+  }
 }
 
 function getResultsExplanation(scenario: RiskScenario, results: SimulationResult): JSX.Element {
