@@ -56,9 +56,10 @@ export default function RiskAnalyzerPage() {
                   </h3>
                   <p className="text-sm text-yellow-700 dark:text-yellow-300 leading-relaxed">
                     This tool was created as a portfolio project to demonstrate programming skills in statistical analysis,
-                    React development, and quantitative modeling. I am not a licensed financial advisor or risk management professional.
-                    This simulator should not be used for actual investment decisions, financial planning, or business risk assessment.
-                    Always consult qualified professionals for real financial advice.
+                    React development, and quantitative modeling. While I am a professional risk management specialist who creates
+                    and maintains Probabilistic Risk Assessment (PRA) software for Idaho National Laboratory, I am not a licensed
+                    financial advisor. This simulator should not be used for actual investment decisions or financial planning.
+                    Always consult qualified financial professionals for investment advice.
                   </p>
                 </div>
               </div>
