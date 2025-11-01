@@ -185,15 +185,7 @@ function getParameterTooltip(distribution: DistributionType, paramName: string):
   return tooltips[distribution]?.[paramName] || "";
 }
 
-function getParameterStep(paramName: string): string {
-  if (paramName.includes('std') || paramName.includes('sigma')) {
-    return "0.1";
-  }
-  if (paramName === 'mu' || paramName === 'mean') {
-    return "0.1";
-  }
-  return "1";
-}
+
 
 function getDistributionSummary(variable: RiskVariable): string {
   const { distribution, parameters } = variable;
@@ -262,7 +254,7 @@ function getResultsExplanation(scenario: RiskScenario, results: SimulationResult
           <div className="p-3 bg-red-50 dark:bg-red-950 rounded border border-red-200 dark:border-red-800">
             <strong className="text-red-800 dark:text-red-200">Risk Assessment:</strong>
             <p className="text-red-700 dark:text-red-300 mt-1">
-              There's a 5% chance your portfolio could lose more than <strong>{Math.abs(results.var95).toFixed(1)}%</strong> in a year (VaR 95%).
+              There&apos;s a 5% chance your portfolio could lose more than <strong>{Math.abs(results.var95).toFixed(1)}%</strong> in a year (VaR 95%).
               In extreme market stress (1% probability), losses could exceed <strong>{Math.abs(results.var99).toFixed(1)}%</strong>.
               {results.mean > 15 && " Your high expected returns come with significant downside risk."}
             </p>
@@ -273,7 +265,7 @@ function getResultsExplanation(scenario: RiskScenario, results: SimulationResult
               <strong className="text-orange-800 dark:text-orange-200">Crypto Impact:</strong>
               <p className="text-orange-700 dark:text-orange-300 mt-1">
                 Including cryptocurrency significantly increases both potential returns and volatility.
-                The extreme price swings in crypto markets contribute heavily to your portfolio's risk profile.
+                The extreme price swings in crypto markets contribute heavily to your portfolio&apos;s risk profile.
               </p>
             </div>
           )}
@@ -287,14 +279,14 @@ function getResultsExplanation(scenario: RiskScenario, results: SimulationResult
             <strong className="text-green-800 dark:text-green-200">Expected Project Cost:</strong>
             <p className="text-green-700 dark:text-green-300 mt-1">
               Your project is likely to cost around <strong>${results.mean.toLocaleString()}</strong> on average.
-              However, there's significant uncertainty - costs could range from ${results.min.toLocaleString()} to ${results.max.toLocaleString()}.
+              However, there&apos;s significant uncertainty - costs could range from ${results.min.toLocaleString()} to ${results.max.toLocaleString()}.
             </p>
           </div>
 
           <div className="p-3 bg-yellow-50 dark:bg-yellow-950 rounded border border-yellow-200 dark:border-yellow-800">
             <strong className="text-yellow-800 dark:text-yellow-200">Budget Planning:</strong>
             <p className="text-yellow-700 dark:text-yellow-300 mt-1">
-              To be 95% confident you won't exceed budget, plan for <strong>${results.var95 > results.mean ? results.var95.toLocaleString() : (results.mean + 2 * results.std).toLocaleString()}</strong>.
+              To be 95% confident you won&apos;t exceed budget, plan for <strong>${results.var95 > results.mean ? results.var95.toLocaleString() : (results.mean + 2 * results.std).toLocaleString()}</strong>.
               Scope creep and technical complexity are the main drivers of cost overruns.
             </p>
           </div>
