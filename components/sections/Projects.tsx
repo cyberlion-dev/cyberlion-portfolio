@@ -143,6 +143,18 @@ const projects: Project[] = [
   },
   {
     id: 11,
+    title: 'Monte Carlo Risk Analyzer',
+    description: 'Advanced quantitative risk simulation tool using Monte Carlo and Latin Hypercube sampling methods. Features interactive parameter controls, real-time statistical analysis, and comprehensive risk metrics for portfolio management, project planning, and financial modeling.',
+    image: './screenshots/riskAnalyzer.png',
+    tags: ['Monte Carlo', 'Statistical Analysis', 'React', 'TypeScript', 'Recharts', 'Risk Management'],
+    category: 'Personal Project',
+    role: 'Quantitative Developer',
+    liveUrl: '/risk-analyzer',
+    isPrivateRepo: false,
+    featured: true,
+  },
+  {
+    id: 12,
     title: 'This Portfolio',
     description: 'Modern portfolio website built with Next.js featuring GSAP animations, dark mode, interactive contact form with spam protection, and responsive design.',
     image: './screenshots/cyberlion.png',
