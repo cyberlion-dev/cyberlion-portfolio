@@ -204,10 +204,55 @@ function getDistributionSummary(variable: RiskVariable): string {
   }
 }
 
+// Determine if a parameter should use a slider or input-only
+function shouldUseSlider(distribution: DistributionType, paramName: string, value: number): boolean {
+  // Use sliders for small values and percentages
+  if (paramName.toLowerCase().includes('weight')) return true;
+  if (paramName === 'mean' && Math.abs(value) < 100) return true;
+  if (paramName === 'std' || paramName === 'sigma') return true;
+  if (paramName === 'mu') return true;
+
+  // Use inputs for large monetary values (triangular distribution)
+  if (distribution === "triangular") return false;
+
+  // Use inputs for large numbers
+  if (value > 1000) return false;
+
+  // Default to slider for small values
+  return true;
+}
+
 function getParameterRange(distribution: DistributionType, paramName: string, currentValue: number): { min: number; max: number; step: number } {
   // Check if it's a weight parameter first
   if (paramName.toLowerCase().includes('weight')) {
     return { min: 0, max: 1, step: 0.01 };
+  }
+
+  // Special handling for triangular distribution parameters (like Base Development Cost)
+  if (distribution === "triangular") {
+    switch (paramName) {
+      case 'min':
+        // Min can be 0 to 80% of current value
+        return {
+          min: 0,
+          max: Math.max(currentValue * 0.8, 10000),
+          step: 1000
+        };
+      case 'mode':
+        // Mode can range from 20% to 150% of current value
+        return {
+          min: Math.max(currentValue * 0.2, 10000),
+          max: Math.max(currentValue * 1.5, 200000),
+          step: 1000
+        };
+      case 'max':
+        // Max can be 120% to 250% of current value, capped at reasonable limits
+        return {
+          min: Math.max(currentValue * 1.1, 80000),
+          max: Math.min(currentValue * 2.5, 500000),
+          step: 1000
+        };
+    }
   }
 
   // Define reasonable ranges based on parameter name and current value
@@ -839,6 +884,7 @@ export default function RiskAnalyzer() {
                 <div className="space-y-4">
                   {Object.entries(variable.parameters).map(([key, value]) => {
                     const { min, max, step } = getParameterRange(variable.distribution, key, value);
+                    const useSlider = shouldUseSlider(variable.distribution, key, value);
                     return (
                       <div key={key} className="space-y-2">
                         <div className="flex items-center justify-between">
@@ -862,39 +908,46 @@ export default function RiskAnalyzer() {
                                 updateVariableParameter(variable.id, key, newValue);
                               }
                             }}
-                            className="w-20 px-2 py-1 text-xs border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-1 focus:ring-blue-500 focus:border-transparent"
+                            className={`px-2 py-1 text-xs border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-1 focus:ring-blue-500 focus:border-transparent ${useSlider ? 'w-20' : 'w-28'
+                              }`}
                           />
                         </div>
 
-                        {/* Slider */}
-                        <div className="relative">
-                          <input
-                            type="range"
-                            min={min}
-                            max={max}
-                            step={step}
-                            value={value}
-                            onChange={(e) => {
-                              const newValue = parseFloat(e.target.value);
-                              updateVariableParameter(variable.id, key, newValue);
-                            }}
-                            className="w-full h-2 bg-gray-200 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer 
+                        {/* Conditional Slider */}
+                        {useSlider ? (
+                          <div className="relative">
+                            <input
+                              type="range"
+                              min={min}
+                              max={max}
+                              step={step}
+                              value={value}
+                              onChange={(e) => {
+                                const newValue = parseFloat(e.target.value);
+                                updateVariableParameter(variable.id, key, newValue);
+                              }}
+                              className="w-full h-2 bg-gray-200 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer 
                                      [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 
                                      [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-500 [&::-webkit-slider-thumb]:cursor-pointer
                                      [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:hover:bg-blue-600 [&::-webkit-slider-thumb]:transition-colors
                                      [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full 
                                      [&::-moz-range-thumb]:bg-blue-500 [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-none"
-                            style={{
-                              background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((value - min) / (max - min)) * 100}%, #e5e7eb ${((value - min) / (max - min)) * 100}%, #e5e7eb 100%)`
-                            }}
-                          />
+                              style={{
+                                background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((value - min) / (max - min)) * 100}%, #e5e7eb ${((value - min) / (max - min)) * 100}%, #e5e7eb 100%)`
+                              }}
+                            />
 
-                          {/* Range labels */}
-                          <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-                            <span>{min}</span>
-                            <span>{max}</span>
+                            {/* Range labels */}
+                            <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
+                              <span>{min.toLocaleString()}</span>
+                              <span>{max.toLocaleString()}</span>
+                            </div>
                           </div>
-                        </div>
+                        ) : (
+                          <div className="text-xs text-gray-500 dark:text-gray-400 text-center py-2 bg-gray-100 dark:bg-gray-700 rounded">
+                            💡 Use number input above for precise control
+                          </div>
+                        )}
                       </div>
                     );
                   })}
