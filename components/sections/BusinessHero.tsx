@@ -113,11 +113,22 @@ export default function BusinessHero() {
             Secure. Innovative. Reliable.
           </p>
 
+          {/* Website for Life Guarantee Badge */}
+          <div className="hero-description mb-6">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 border-2 border-primary/50 backdrop-blur">
+              <Sparkles className="w-5 h-5 text-primary" />
+              <span className="text-lg font-bold bg-gradient-to-r from-primary via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                Website for Life Guarantee
+              </span>
+              <Sparkles className="w-5 h-5 text-primary" />
+            </div>
+          </div>
+
           {/* Description */}
           <p className="hero-description text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
             From stunning websites to comprehensive cybersecurity assessments,
             we deliver cutting-edge web solutions tailored to your business needs.
-            Protect your digital presence and elevate your online experience.
+            <span className="font-semibold text-foreground"> Get a website that evolves with you—free rebuilds, lifetime support, no hidden costs.</span>
           </p>
 
           {/* CTA Buttons */}

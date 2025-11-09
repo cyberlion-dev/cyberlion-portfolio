@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import BusinessHero from '@/components/sections/BusinessHero';
 import BusinessServices from '@/components/sections/BusinessServices';
 import BusinessAbout from '@/components/sections/BusinessAbout';
+import LifetimeGuarantee from '@/components/sections/LifetimeGuarantee';
 import BusinessCTA from '@/components/sections/BusinessCTA';
 import Contact from '@/components/sections/Contact';
 
@@ -15,6 +16,7 @@ export default function Home() {
         <BusinessHero />
         <BusinessServices />
         <BusinessAbout />
+        <LifetimeGuarantee />
         <BusinessCTA />
         <Contact />
       </main>

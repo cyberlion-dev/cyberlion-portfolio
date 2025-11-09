@@ -14,13 +14,18 @@ import {
   Heart,
   Award,
   Users2,
-  Clock,
+  Infinity,
   TrendingUp
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const values = [
+  {
+    icon: Infinity,
+    title: "Website for Life",
+    description: "Get a website that grows with your business—forever. Free rebuilds, unlimited updates, lifetime support. No hidden costs, ever.",
+  },
   {
     icon: Target,
     title: "Precision & Quality",
@@ -46,7 +51,7 @@ const values = [
 const stats = [
   { icon: Award, value: "10+", label: "Years Experience" },
   { icon: Users2, value: "50+", label: "Happy Clients" },
-  { icon: Clock, value: "24/7", label: "Support Available" },
+  { icon: Infinity, value: "Lifetime", label: "Support & Rebuilds" },
   { icon: TrendingUp, value: "100%", label: "Client Satisfaction" },
 ];
 
@@ -125,7 +130,7 @@ export default function BusinessAbout() {
         </div>
 
         {/* Values Grid */}
-        <div className="values-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="values-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-20">
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
