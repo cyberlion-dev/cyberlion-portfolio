@@ -1,9 +1,10 @@
-// Main page - Custom portfolio layout composing all sections
+// CyberLion Web Solutions - Business Home Page
 
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Projects from '@/components/sections/Projects';
+import BusinessHero from '@/components/sections/BusinessHero';
+import BusinessServices from '@/components/sections/BusinessServices';
+import BusinessAbout from '@/components/sections/BusinessAbout';
+import BusinessCTA from '@/components/sections/BusinessCTA';
 import Contact from '@/components/sections/Contact';
 
 export default function Home() {
@@ -11,9 +12,10 @@ export default function Home() {
     <>
       <Navigation />
       <main className="min-h-screen overflow-x-hidden w-full">
-        <Hero />
-        <About />
-        <Projects />
+        <BusinessHero />
+        <BusinessServices />
+        <BusinessAbout />
+        <BusinessCTA />
         <Contact />
       </main>
     </>

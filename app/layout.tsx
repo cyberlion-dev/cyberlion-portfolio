@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jordan Boyce | Developer & Designer Portfolio",
-  description: "A showcase of development and design projects by Jordan Boyce. Explore my work in web development, UI/UX design, and creative solutions.",
+  title: "CyberLion Web Solutions | Websites, Software & Cybersecurity",
+  description: "Professional web development, software solutions, cybersecurity assessments, and privacy audits. CyberLion delivers secure, innovative, and reliable digital solutions for your business.",
 };
 
 export default function RootLayout({
