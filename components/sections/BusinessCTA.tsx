@@ -66,7 +66,7 @@ export default function BusinessCTA() {
             </span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Let's discuss your project and explore how CyberLion can help you achieve
+            Let&apos;s discuss your project and explore how CyberLion can help you achieve
             your goals. Get a free consultation and discover the possibilities.
           </p>
 

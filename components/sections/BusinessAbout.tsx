@@ -117,7 +117,7 @@ export default function BusinessAbout() {
               Your Partner in Digital Excellence
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're not just another web agency. We're your strategic partner,
+              We&apos;re not just another web agency. We&apos;re your strategic partner,
               combining technical expertise with business acumen to deliver
               solutions that drive real results.
             </p>
@@ -171,10 +171,10 @@ export default function BusinessAbout() {
         {/* Mission Statement */}
         <div className="mt-20 text-center max-w-4xl mx-auto">
           <blockquote className="text-2xl lg:text-3xl font-semibold leading-relaxed text-foreground/90 italic">
-            "We believe every business deserves a powerful digital presence backed by
+            &ldquo;We believe every business deserves a powerful digital presence backed by
             <span className="text-primary"> robust security</span> and
             <span className="text-primary"> cutting-edge technology</span>.
-            That's the CyberLion promise."
+            That&apos;s the CyberLion promise.&rdquo;
           </blockquote>
         </div>
       </div>

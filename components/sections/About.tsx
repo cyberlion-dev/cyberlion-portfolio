@@ -7,7 +7,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Palette, Rocket, Users } from "lucide-react";
-import Link from "next/link";
 import { Button } from "../ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
