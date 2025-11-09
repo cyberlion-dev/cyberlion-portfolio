@@ -102,7 +102,7 @@ export default function AIProcess() {
     <section
       ref={sectionRef}
       id="ai-process"
-      className="py-20 lg:py-32 bg-gradient-to-b from-background to-violet-950/5 relative overflow-hidden"
+      className="py-12 lg:py-20 bg-gradient-to-b from-background to-violet-950/5 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-white/5" />

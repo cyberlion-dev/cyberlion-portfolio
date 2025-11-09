@@ -106,10 +106,16 @@ export default function BusinessAbout() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-20 lg:py-32 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden"
+      className="py-12 lg:py-20 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-white/5" />
+
+      {/* Glowing orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl opacity-60" />
+        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl opacity-60" />
+      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

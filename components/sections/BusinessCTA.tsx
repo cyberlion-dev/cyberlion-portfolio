@@ -44,7 +44,7 @@ export default function BusinessCTA() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-32 relative overflow-hidden"
+      className="py-12 lg:py-20 relative overflow-hidden"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-blue-500/20 to-purple-500/20" />
