@@ -14,7 +14,8 @@ import {
   ShieldCheck,
   Laptop,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Brain
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -56,6 +57,14 @@ const services = [
     description: "Professional security audits for businesses and individuals. Penetration testing, vulnerability assessments, and security hardening.",
     features: ["Penetration Testing", "Vulnerability Scans", "Security Hardening", "Compliance Audits"],
     color: "from-red-500 to-rose-500",
+  },
+  {
+    icon: Brain,
+    title: "AI Solutions",
+    description: "Harness the power of artificial intelligence for your business. From chatbots to custom AI models, we implement intelligent solutions that automate and enhance your operations.",
+    features: ["AI Chatbots", "Process Automation", "Custom AI Models", "AI Integration"],
+    color: "from-violet-500 to-purple-500",
+    link: "/ai-solutions",
   },
   {
     icon: Laptop,
@@ -132,10 +141,10 @@ export default function BusinessServices() {
         <div ref={cardsRef} className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
-            return (
+
+            const cardContent = (
               <Card
-                key={index}
-                className="service-card group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 bg-card/50 backdrop-blur"
+                className="service-card group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 bg-card/50 backdrop-blur h-full cursor-pointer"
               >
                 <CardHeader>
                   <div className={`inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} mb-4 group-hover:scale-110 transition-transform`}>
@@ -157,8 +166,23 @@ export default function BusinessServices() {
                       </li>
                     ))}
                   </ul>
+                  {service.link && (
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary">
+                      Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  )}
                 </CardContent>
               </Card>
+            );
+
+            return service.link ? (
+              <Link key={index} href={service.link}>
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={index}>
+                {cardContent}
+              </div>
             );
           })}
         </div>
