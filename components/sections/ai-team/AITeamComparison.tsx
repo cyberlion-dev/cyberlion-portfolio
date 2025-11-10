@@ -70,22 +70,35 @@ export default function AITeamComparison() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".comparison-title", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-      });
+      // Using fromTo to ensure elements are visible
+      gsap.fromTo(".comparison-title",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".comparison-row", {
-        opacity: 0,
-        x: -50,
-        duration: 0.8,
-        delay: 0.4,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".comparison-row",
+        {
+          opacity: 0,
+          x: -50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          delay: 0.4,
+          stagger: 0.1,
+          ease: "power3.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

@@ -15,37 +15,61 @@ export default function BusinessHero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate hero content on mount
-      gsap.from(".hero-title", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-      });
+      // Animate hero content on mount - using fromTo to ensure elements are visible
+      gsap.fromTo(".hero-title",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".hero-subtitle", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".hero-subtitle",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".hero-description", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.4,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".hero-description",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.4,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".hero-buttons", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.6,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".hero-buttons",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.6,
+          ease: "power3.out",
+        }
+      );
 
       // Floating animation for shapes
       gsap.to(".floating-shape", {
@@ -76,7 +100,7 @@ export default function BusinessHero() {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-16 md:pt-20"
     >
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(white,transparent_85%)]" />
@@ -126,8 +150,8 @@ export default function BusinessHero() {
 
           {/* Description */}
           <p className="hero-description text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            From stunning websites to comprehensive cybersecurity assessments,
-            we deliver cutting-edge web solutions tailored to your business needs.
+            Serving Chandler, Gilbert, Mesa, and the greater Phoenix area with stunning websites and comprehensive cybersecurity solutions.
+            We deliver cutting-edge web solutions tailored to your business needs.
             <span className="font-semibold text-foreground"> Get a website that evolves with you—free rebuilds, lifetime support, no hidden costs.</span>
           </p>
 

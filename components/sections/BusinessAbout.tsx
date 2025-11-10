@@ -60,43 +60,61 @@ export default function BusinessAbout() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate section title
-      gsap.from(".about-title", {
-        scrollTrigger: {
-          trigger: ".about-title",
-          start: "top 80%",
+      // Animate section title - using fromTo to ensure elements are visible
+      gsap.fromTo(".about-title",
+        {
+          opacity: 0,
+          y: 30,
         },
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".about-title",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
 
-      // Animate value cards
-      gsap.from(".value-card", {
-        scrollTrigger: {
-          trigger: ".values-grid",
-          start: "top 80%",
+      // Animate value cards - using fromTo to ensure elements are visible
+      gsap.fromTo(".value-card",
+        {
+          opacity: 0,
+          y: 50,
         },
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".values-grid",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+        }
+      );
 
-      // Animate stats
-      gsap.from(".stat-item", {
-        scrollTrigger: {
-          trigger: ".stats-grid",
-          start: "top 80%",
+      // Animate stats - using fromTo to ensure elements are visible
+      gsap.fromTo(".stat-item",
+        {
+          opacity: 0,
+          scale: 0.8,
         },
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".stats-grid",
+            start: "top 80%",
+          },
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -128,9 +146,9 @@ export default function BusinessAbout() {
               Your Partner in Digital Excellence
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We&apos;re not just another web agency. We&apos;re your strategic partner,
+              Based in Chandler, Arizona, we&apos;re not just another web agency. We&apos;re your strategic partner,
               combining technical expertise with business acumen to deliver
-              solutions that drive real results.
+              solutions that drive real results throughout the Phoenix metro area and beyond.
             </p>
           </div>
         </div>

@@ -81,24 +81,36 @@ export default function BusinessServices() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate section title
-      gsap.from(".services-title", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-      });
+      // Animate section title - using fromTo to ensure elements are visible
+      gsap.fromTo(".services-title",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      );
 
-      // Animate service cards with stagger
-      gsap.from(".service-card", {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        delay: 0.4,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
+      // Animate service cards with stagger - using fromTo to ensure elements are visible
+      gsap.fromTo(".service-card",
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay: 0.4,
+          stagger: 0.15,
+          ease: "power3.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

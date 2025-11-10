@@ -28,6 +28,7 @@ export default function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/#services", label: "Services" },
+    { href: "/#pricing", label: "Pricing" },
     { href: "/ai-solutions", label: "AI Solutions" },
     { href: "/ai-amplified-team", label: "AI-Amplified Team" },
     { href: "/portfolio", label: "Portfolio" },

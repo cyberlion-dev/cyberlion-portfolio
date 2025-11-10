@@ -123,28 +123,41 @@ export default function AIServices() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".ai-services-title", {
-        scrollTrigger: {
-          trigger: ".ai-services-title",
-          start: "top 80%",
+      // Using fromTo to ensure elements are visible
+      gsap.fromTo(".ai-services-title",
+        {
+          opacity: 0,
+          y: 30,
         },
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".ai-services-title",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".ai-service-card", {
-        scrollTrigger: {
-          trigger: ".ai-services-grid",
-          start: "top 80%",
+      gsap.fromTo(".ai-service-card",
+        {
+          opacity: 0,
+          y: 50,
         },
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".ai-services-grid",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

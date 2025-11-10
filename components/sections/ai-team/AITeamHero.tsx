@@ -13,44 +13,75 @@ export default function AITeamHero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".hero-badge", {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-      });
+      // Using fromTo to ensure elements are visible
+      gsap.fromTo(".hero-badge",
+        {
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+        }
+      );
 
-      gsap.from(".hero-title", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".hero-title",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".hero-subtitle", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.4,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".hero-subtitle",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.4,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".hero-stats", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.6,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".hero-stats",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.6,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".hero-buttons", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.8,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".hero-buttons",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.8,
+          ease: "power3.out",
+        }
+      );
     }, heroRef);
 
     return () => ctx.revert();
@@ -59,7 +90,7 @@ export default function AITeamHero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-blue-500/5"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-blue-500/5 pt-16 md:pt-20"
     >
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(white,transparent_85%)]" />

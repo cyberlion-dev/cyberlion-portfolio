@@ -47,22 +47,35 @@ export default function AITeamROI() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".roi-title", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-      });
+      // Using fromTo to ensure elements are visible
+      gsap.fromTo(".roi-title",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".roi-card", {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.8,
-        delay: 0.4,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".roi-card",
+        {
+          opacity: 0,
+          scale: 0.95,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          delay: 0.4,
+          stagger: 0.2,
+          ease: "power3.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

@@ -53,40 +53,59 @@ export default function LifetimeGuarantee() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".guarantee-title", {
-        scrollTrigger: {
-          trigger: ".guarantee-title",
-          start: "top 80%",
+      // Using fromTo to ensure elements are visible
+      gsap.fromTo(".guarantee-title",
+        {
+          opacity: 0,
+          y: 30,
         },
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".guarantee-title",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".guarantee-feature", {
-        scrollTrigger: {
-          trigger: ".guarantee-features",
-          start: "top 80%",
+      gsap.fromTo(".guarantee-feature",
+        {
+          opacity: 0,
+          y: 50,
         },
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".guarantee-features",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".guarantee-list-item", {
-        scrollTrigger: {
-          trigger: ".guarantee-list",
-          start: "top 80%",
+      gsap.fromTo(".guarantee-list-item",
+        {
+          opacity: 0,
+          x: -30,
         },
-        opacity: 0,
-        x: -30,
-        duration: 0.6,
-        stagger: 0.08,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".guarantee-list",
+            start: "top 80%",
+          },
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: "power3.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -123,9 +142,10 @@ export default function LifetimeGuarantee() {
               <span className="text-foreground">Guarantee</span>
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Unlike other agencies that charge ongoing fees or disappear after launch,
-              we believe in building lasting partnerships. Your success is our success,
-              and we&apos;re committed for the long haul.
+              Here&apos;s the reality: <span className="font-semibold text-foreground">just like the milk in your fridge, websites get old.</span> Technology
+              evolves, design trends change, and what looks fresh today can feel stale in a few years. Unlike other
+              agencies that charge you for every rebuild, we believe in lasting partnerships. When your site needs
+              a refresh, we handle it—that&apos;s the deal.
             </p>
           </div>
         </div>
@@ -179,7 +199,9 @@ export default function LifetimeGuarantee() {
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 We&apos;ve rebuilt entire websites for clients when new technologies emerged
-                or their business evolved—at zero cost. That&apos;s our commitment to you.
+                or their business evolved—at zero cost. Sites go stale. Technology moves fast.
+                That&apos;s just reality. Our commitment is simple: we keep your site fresh, like you keep
+                restocking your fridge. That&apos;s our promise.
               </p>
             </div>
 

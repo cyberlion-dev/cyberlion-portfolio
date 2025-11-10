@@ -97,28 +97,41 @@ export default function AIUseCases() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".use-cases-title", {
-        scrollTrigger: {
-          trigger: ".use-cases-title",
-          start: "top 80%",
+      // Using fromTo to ensure elements are visible
+      gsap.fromTo(".use-cases-title",
+        {
+          opacity: 0,
+          y: 30,
         },
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".use-cases-title",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".use-case-card", {
-        scrollTrigger: {
-          trigger: ".use-cases-grid",
-          start: "top 80%",
+      gsap.fromTo(".use-case-card",
+        {
+          opacity: 0,
+          y: 50,
         },
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".use-cases-grid",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

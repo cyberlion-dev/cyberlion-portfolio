@@ -14,37 +14,61 @@ export default function AIHero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate hero content
-      gsap.from(".ai-hero-title", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-      });
+      // Animate hero content - using fromTo to ensure elements are visible
+      gsap.fromTo(".ai-hero-title",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".ai-hero-subtitle", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".ai-hero-subtitle",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".ai-hero-description", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.4,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".ai-hero-description",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.4,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".ai-hero-buttons", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.6,
-        ease: "power3.out",
-      });
+      gsap.fromTo(".ai-hero-buttons",
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.6,
+          ease: "power3.out",
+        }
+      );
 
       // Floating shapes animation
       gsap.to(".ai-floating-shape", {
@@ -81,7 +105,7 @@ export default function AIHero() {
     <section
       ref={heroRef}
       id="ai-hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-violet-950/10 to-purple-950/10"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-violet-950/10 to-purple-950/10 pt-16 md:pt-20"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(white,transparent_85%)]" />

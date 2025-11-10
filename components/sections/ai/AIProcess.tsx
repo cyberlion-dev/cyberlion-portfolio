@@ -71,28 +71,41 @@ export default function AIProcess() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".process-title", {
-        scrollTrigger: {
-          trigger: ".process-title",
-          start: "top 80%",
+      // Using fromTo to ensure elements are visible
+      gsap.fromTo(".process-title",
+        {
+          opacity: 0,
+          y: 30,
         },
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".process-title",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".process-step", {
-        scrollTrigger: {
-          trigger: ".process-grid",
-          start: "top 80%",
+      gsap.fromTo(".process-step",
+        {
+          opacity: 0,
+          x: -50,
         },
-        opacity: 0,
-        x: -50,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-      });
+        {
+          scrollTrigger: {
+            trigger: ".process-grid",
+            start: "top 80%",
+          },
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

@@ -16,13 +16,20 @@ export default function BusinessCTA() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".cta-content", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        delay: 0.2,
-        ease: "power3.out",
-      });
+      // Animate CTA content - using fromTo to ensure elements are visible
+      gsap.fromTo(".cta-content",
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      );
 
       // Animate floating orbs
       gsap.to(".cta-orb", {
