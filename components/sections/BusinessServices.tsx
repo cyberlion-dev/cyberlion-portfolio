@@ -83,25 +83,19 @@ export default function BusinessServices() {
     const ctx = gsap.context(() => {
       // Animate section title
       gsap.from(".services-title", {
-        scrollTrigger: {
-          trigger: ".services-title",
-          start: "top 80%",
-        },
         opacity: 0,
         y: 30,
         duration: 1,
+        delay: 0.2,
         ease: "power3.out",
       });
 
-      // Animate service cards
+      // Animate service cards with stagger
       gsap.from(".service-card", {
-        scrollTrigger: {
-          trigger: ".services-grid",
-          start: "top 80%",
-        },
         opacity: 0,
         y: 50,
         duration: 0.8,
+        delay: 0.4,
         stagger: 0.15,
         ease: "power3.out",
       });

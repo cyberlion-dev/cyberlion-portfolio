@@ -17,13 +17,10 @@ export default function BusinessCTA() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".cta-content", {
-        scrollTrigger: {
-          trigger: ".cta-content",
-          start: "top 80%",
-        },
         opacity: 0,
         y: 50,
         duration: 1,
+        delay: 0.2,
         ease: "power3.out",
       });
 
