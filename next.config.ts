@@ -11,6 +11,19 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+
+  // Exclude lambda directory from build
+  webpack: (config) => {
+    config.watchOptions = {
+      ...config.watchOptions,
+      ignored: ['**/app/christmas-drawing/lambda/**'],
+    };
+    return config;
+  },
+
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
 };
 
 export default nextConfig;
