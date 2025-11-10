@@ -29,7 +29,7 @@ export default function Navigation() {
     { href: "/", label: "Home" },
     { href: "/#services", label: "Services" },
     { href: "/ai-solutions", label: "AI Solutions" },
-    { href: "/#about", label: "About" },
+    { href: "/ai-amplified-team", label: "AI-Amplified Team" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/#contact", label: "Contact" },
   ];
