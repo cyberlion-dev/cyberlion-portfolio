@@ -169,7 +169,7 @@ export default function WhyNotDIY() {
               <div>
                 <div className="text-4xl lg:text-5xl font-bold text-red-500 mb-2">60%</div>
                 <div className="text-sm text-muted-foreground">
-                  of DIY website owners cite "lack of time" as why their site is outdated or broken
+                  of DIY website owners cite &quot;lack of time&quot; as why their site is outdated or broken
                 </div>
               </div>
               <div>

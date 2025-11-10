@@ -1,0 +1,10 @@
+# CyberLion Web Solutions - Robots.txt
+# Allow all web crawlers to index the site
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://cyberlionwebsolutions.com/sitemap.xml

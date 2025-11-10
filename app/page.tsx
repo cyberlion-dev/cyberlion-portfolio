@@ -6,6 +6,7 @@ import BusinessServices from '@/components/sections/BusinessServices';
 import WhyNotDIY from '@/components/sections/WhyNotDIY';
 import AIArmy from '@/components/sections/AIArmy';
 import MilkJoke from '@/components/sections/MilkJoke';
+import PricingCalculator from '@/components/sections/PricingCalculator';
 import Pricing from '@/components/sections/Pricing';
 import BusinessAbout from '@/components/sections/BusinessAbout';
 import LifetimeGuarantee from '@/components/sections/LifetimeGuarantee';
@@ -22,6 +23,7 @@ export default function Home() {
         <WhyNotDIY />
         <AIArmy />
         <MilkJoke />
+        <PricingCalculator />
         <Pricing />
         <BusinessAbout />
         <LifetimeGuarantee />

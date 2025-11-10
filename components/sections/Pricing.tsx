@@ -210,15 +210,15 @@ export default function Pricing() {
           <div className="pricing-title">
             <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Transparent Pricing</span>
+              <span className="text-sm font-semibold text-primary">Standard Packages</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Simple, Honest Pricing
+              Or Choose a Ready-Made Package
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional websites for less than DIY platforms. Custom-built, not templated.
+              Not into sliders? No problem. Here are our standard packages with everything included.
               <br />
-              <span className="text-primary font-semibold">Compare: Squarespace charges $432/year for templates. We build custom for less.</span>
+              <span className="text-primary font-semibold">Professional websites for less than DIY platforms. Custom-built, not templated.</span>
             </p>
           </div>
         </div>
