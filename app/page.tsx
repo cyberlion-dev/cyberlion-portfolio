@@ -1,17 +1,19 @@
 // CyberLion Web Solutions - Business Home Page
 
+import type { Metadata } from "next";
 import Navigation from '@/components/Navigation';
 import BusinessHero from '@/components/sections/BusinessHero';
+import TechBanner from '@/components/sections/TechBanner';
 import BusinessServices from '@/components/sections/BusinessServices';
-import WhyNotDIY from '@/components/sections/WhyNotDIY';
-import AIArmy from '@/components/sections/AIArmy';
-import MilkJoke from '@/components/sections/MilkJoke';
-import PricingCalculator from '@/components/sections/PricingCalculator';
-import Pricing from '@/components/sections/Pricing';
-import BusinessAbout from '@/components/sections/BusinessAbout';
-import LifetimeGuarantee from '@/components/sections/LifetimeGuarantee';
-import BusinessCTA from '@/components/sections/BusinessCTA';
 import Contact from '@/components/sections/Contact';
+import Footer from '@/components/sections/Footer';
+
+export const metadata: Metadata = {
+  title: "CyberLion Web Solutions | IT Services & Web Development Phoenix",
+  description:
+    "WiFi setup, Starlink installation, network troubleshooting, and modern websites for homes and small businesses in Phoenix, Chandler, Gilbert, and Mesa. Fast turnaround, honest pricing.",
+  keywords: "WiFi setup Phoenix, Starlink installation Arizona, network troubleshooting, web development Phoenix, IT services Chandler, home network setup, small business IT",
+};
 
 export default function Home() {
   return (
@@ -19,16 +21,10 @@ export default function Home() {
       <Navigation />
       <main className="min-h-screen overflow-x-hidden w-full">
         <BusinessHero />
+        <TechBanner />
         <BusinessServices />
-        <WhyNotDIY />
-        <AIArmy />
-        <MilkJoke />
-        <PricingCalculator />
-        <Pricing />
-        <BusinessAbout />
-        <LifetimeGuarantee />
-        <BusinessCTA />
         <Contact />
+        <Footer />
       </main>
     </>
   );

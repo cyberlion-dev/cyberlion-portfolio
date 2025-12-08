@@ -149,8 +149,8 @@ export default function Contact() {
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      details: '+1 (208) 534-6069',
-      link: 'tel:+12085346069',
+      details: '(480) 360-5964',
+      link: 'tel:+14803605964',
     },
     {
       icon: <MapPin size={24} />,
@@ -315,10 +315,6 @@ export default function Contact() {
               </form>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="mt-16 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Jordan Boyce. All rights reserved.</p>
         </div>
       </div>
     </section>

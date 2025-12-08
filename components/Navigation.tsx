@@ -2,19 +2,16 @@
 
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const logoRef = useRef<HTMLDivElement>(null);
-  const pipeRef = useRef<HTMLSpanElement>(null);
-  const cyberlionRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,55 +23,10 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "/", label: "Home" },
     { href: "/#services", label: "Services" },
-    { href: "/#pricing", label: "Pricing" },
-    { href: "/ai-solutions", label: "AI Solutions" },
-    { href: "/ai-amplified-team", label: "AI-Amplified Team" },
-    { href: "/portfolio", label: "Portfolio" },
+    { href: "/ai-automation", label: "AI & Automation" },
     { href: "/#contact", label: "Contact" },
   ];
-
-  const handleLogoHover = (isEntering: boolean) => {
-    if (isEntering) {
-      // Animate pipe in
-      gsap.to(pipeRef.current, {
-        opacity: 1,
-        x: 0,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-
-      // Animate Cyberlion letters with stagger
-      const letters = cyberlionRef.current?.children || [];
-      gsap.to(letters, {
-        opacity: 1,
-        x: 0,
-        rotationY: 0,
-        duration: 0.5,
-        stagger: 0.05,
-        ease: "back.out(1.7)",
-      });
-    } else {
-      // Reverse animations
-      gsap.to(pipeRef.current, {
-        opacity: 0,
-        x: -10,
-        duration: 0.2,
-        ease: "power2.in",
-      });
-
-      const letters = cyberlionRef.current?.children || [];
-      gsap.to(letters, {
-        opacity: 0,
-        x: -20,
-        rotationY: -90,
-        duration: 0.3,
-        stagger: 0.03,
-        ease: "power2.in",
-      });
-    }
-  };
 
   return (
     <nav
@@ -85,45 +37,10 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo with Animated Extension */}
-          <Link href="/" className="relative group">
-            <div
-              ref={logoRef}
-              className="flex items-center text-2xl font-bold tracking-tight"
-              onMouseEnter={() => handleLogoHover(true)}
-              onMouseLeave={() => handleLogoHover(false)}
-            >
-              <span>JB</span>
-
-              {/* Pipe Separator */}
-              <span
-                ref={pipeRef}
-                className="mx-2 opacity-0 -translate-x-3"
-                style={{ display: 'inline-block' }}
-              >
-                |
-              </span>
-
-              {/* Cyberlion Text with Letter Stagger */}
-              <span
-                ref={cyberlionRef}
-                className="inline-flex"
-                style={{ perspective: '1000px' }}
-              >
-                {'Cyberlion'.split('').map((letter, index) => (
-                  <span
-                    key={index}
-                    className="inline-block opacity-0 -translate-x-5"
-                    style={{
-                      transformStyle: 'preserve-3d',
-                      transformOrigin: 'left center'
-                    }}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </span>
-            </div>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <Logo variant="icon" className="h-10 md:h-12 w-auto" />
+            <span className="text-xl md:text-2xl font-bold tracking-tight">CyberLion</span>
           </Link>
 
           {/* Desktop Navigation */}
