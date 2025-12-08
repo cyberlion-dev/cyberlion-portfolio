@@ -7,71 +7,87 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Globe,
-  Code2,
-  Users,
-  Home,
-  ShieldCheck,
-  Laptop,
+  Wifi,
+  Shield,
+  Satellite,
+  Network,
+  Printer,
+  Server,
+  Lock,
   Sparkles,
-  ArrowRight,
-  Brain
+  ArrowRight
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const services = [
+const itServices = [
   {
-    icon: Globe,
-    title: "Website Development",
-    description: "Custom, responsive websites built with modern frameworks. From landing pages to complex web applications, we create digital experiences that convert.",
-    features: ["Responsive Design", "SEO Optimized", "Fast Performance", "Mobile-First"],
+    icon: Wifi,
+    title: "WiFi Setup & Heat Mapping",
+    description: "Professional WiFi installation, heat mapping, and optimization. We eliminate dead zones and ensure strong coverage throughout your entire space.",
+    features: ["Coverage Analysis", "Dead Zone Fixes", "Access Point Setup", "Performance Tuning"],
     color: "from-blue-500 to-cyan-500",
   },
   {
-    icon: Code2,
-    title: "Software Development",
-    description: "Full-stack software solutions tailored to your business needs. We build scalable, maintainable applications using cutting-edge technologies.",
-    features: ["Custom Solutions", "API Development", "Database Design", "Cloud Integration"],
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    icon: Users,
-    title: "Consulting Services",
-    description: "Expert guidance on web strategy, architecture, and digital transformation. We help you make informed decisions about your technology stack.",
-    features: ["Tech Stack Selection", "Architecture Planning", "Best Practices", "Code Reviews"],
+    icon: Satellite,
+    title: "Starlink Installation",
+    description: "Expert Starlink mounting and network integration. Get your satellite internet professionally installed and configured for optimal performance.",
+    features: ["Professional Mounting", "Router Setup", "Network Integration", "Configuration"],
     color: "from-orange-500 to-red-500",
   },
   {
-    icon: Home,
-    title: "Home Privacy Audits",
-    description: "Comprehensive assessments of your home network and smart devices. Identify vulnerabilities and secure your personal digital ecosystem.",
-    features: ["Network Analysis", "IoT Security", "Privacy Assessment", "Security Recommendations"],
+    icon: Shield,
+    title: "Pi-hole & pfSense",
+    description: "Network-wide ad blocking with Pi-hole and enterprise-grade firewall protection with pfSense. Take control of your network security.",
+    features: ["Ad Blocking Setup", "Firewall Configuration", "DNS Management", "VPN Integration"],
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    icon: Network,
+    title: "Small Business Networking",
+    description: "Complete network infrastructure for home offices and small businesses. Reliable, scalable setups that just work.",
+    features: ["Network Design", "Router Upgrades", "Business WiFi", "Cable Installation"],
     color: "from-green-500 to-emerald-500",
   },
   {
-    icon: ShieldCheck,
-    title: "Cybersecurity Assessments",
-    description: "Professional security audits for businesses and individuals. Penetration testing, vulnerability assessments, and security hardening.",
-    features: ["Penetration Testing", "Vulnerability Scans", "Security Hardening", "Compliance Audits"],
+    icon: Printer,
+    title: "Printer Setup & Support",
+    description: "Stop fighting with printers. We handle setup, drivers, network printing, and troubleshooting so your printers actually work.",
+    features: ["Printer Setup", "Network Printing", "Driver Installation", "Troubleshooting"],
     color: "from-red-500 to-rose-500",
   },
   {
-    icon: Brain,
-    title: "AI Solutions",
-    description: "Harness the power of artificial intelligence for your business. From chatbots to custom AI models, we implement intelligent solutions that automate and enhance your operations.",
-    features: ["AI Chatbots", "Process Automation", "Custom AI Models", "AI Integration"],
+    icon: Server,
+    title: "General Tech Support",
+    description: "All the tech help you need—router configuration, device setup, troubleshooting, and general IT support for homes and small businesses.",
+    features: ["Router Setup", "Device Configuration", "Tech Troubleshooting", "IT Support"],
+    color: "from-indigo-500 to-blue-500",
+  },
+];
+
+const webServices = [
+  {
+    icon: Network,
+    title: "Modern Websites",
+    description: "Fast, responsive websites built with Angular, Nuxt, and Tailwind. Clean code, great performance, and built to last.",
+    features: ["Angular & Nuxt", "Tailwind CSS", "Responsive Design", "Fast Performance"],
     color: "from-violet-500 to-purple-500",
-    link: "/ai-solutions",
   },
   {
-    icon: Laptop,
-    title: "All Web Tasks",
-    description: "From domain setup to deployment, maintenance to migrations. Whatever web-related challenge you're facing, we've got you covered.",
-    features: ["Domain Management", "Hosting Setup", "Maintenance", "Technical Support"],
-    color: "from-indigo-500 to-blue-500",
+    icon: Server,
+    title: "Local Business Sites",
+    description: "Professional websites for local businesses. Landing pages, portfolios, and business sites that help you get found online.",
+    features: ["Business Websites", "Landing Pages", "SEO Optimized", "Mobile-First"],
+    color: "from-cyan-500 to-blue-500",
+  },
+  {
+    icon: Lock,
+    title: "Hosting & Maintenance",
+    description: "Reliable hosting setup and ongoing maintenance. We keep your site fast, secure, and running smoothly.",
+    features: ["Hosting Setup", "Speed Optimization", "Security Updates", "Ongoing Support"],
+    color: "from-emerald-500 to-green-500",
   },
 ];
 
@@ -140,70 +156,95 @@ export default function BusinessServices() {
               <span className="text-sm font-semibold text-primary">Our Services</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Comprehensive Web Solutions
+              Technology That Just Works
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We offer a full spectrum of services to power your digital presence,
-              from development to security—everything you need under one roof.
+              Helping homeowners, families, and small businesses get their technology working the way it should. Fast turnaround, honest pricing, and no pushy upsells.
             </p>
           </div>
         </div>
 
-        {/* Services Grid */}
-        <div ref={cardsRef} className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            const cardContent = (
-              <Card
-                className="service-card group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 bg-card/50 backdrop-blur h-full cursor-pointer"
-              >
-                <CardHeader>
-                  <div className={`inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} mb-4 group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-7 h-7 text-white" strokeWidth={2} />
-                  </div>
-                  <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {service.link && (
-                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary">
-                      Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        {/* Local IT Services Section */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold mb-8 text-center">Local IT Services</h3>
+          <div ref={cardsRef} className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {itServices.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Card
+                  key={index}
+                  className="service-card group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 bg-card/50 backdrop-blur h-full"
+                >
+                  <CardHeader>
+                    <div className={`inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-7 h-7 text-white" strokeWidth={2} />
                     </div>
-                  )}
-                </CardContent>
-              </Card>
-            );
+                    <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
 
-            return service.link ? (
-              <Link key={index} href={service.link}>
-                {cardContent}
-              </Link>
-            ) : (
-              <div key={index}>
-                {cardContent}
-              </div>
-            );
-          })}
+        {/* Web Development Section */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold mb-8 text-center">Web Development</h3>
+          <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {webServices.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Card
+                  key={index}
+                  className="service-card group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 bg-card/50 backdrop-blur h-full"
+                >
+                  <CardHeader>
+                    <div className={`inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-7 h-7 text-white" strokeWidth={2} />
+                    </div>
+                    <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
 
         {/* CTA */}
         <div className="text-center mt-16">
           <Link href="#contact">
             <Button size="lg" className="group">
-              Start Your Project
+              Get Started
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
