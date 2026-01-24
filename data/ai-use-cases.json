@@ -1,0 +1,184 @@
+{
+  "useCases": [
+    {
+      "id": "email-drafting",
+      "title": "Internal Email Drafting",
+      "description": "AI assists staff in drafting internal communications, responses to common inquiries, or routine updates.",
+      "baseImpact": 7,
+      "customerTrustRisk": 0,
+      "maturityRequired": 1,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Draft responses to vendor inquiries",
+        "Summarize meeting notes into email updates",
+        "Create routine status reports"
+      ]
+    },
+    {
+      "id": "knowledge-base-summarization",
+      "title": "Knowledge Base Summarization",
+      "description": "AI summarizes internal documentation, policies, or research to help staff find information faster.",
+      "baseImpact": 8,
+      "customerTrustRisk": 0,
+      "maturityRequired": 2,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Summarize product documentation for sales team",
+        "Extract key points from lengthy policy documents",
+        "Create searchable summaries of meeting transcripts"
+      ]
+    },
+    {
+      "id": "process-automation",
+      "title": "Process Automation",
+      "description": "AI automates repetitive back-office tasks like data entry, categorization, or report generation.",
+      "baseImpact": 9,
+      "customerTrustRisk": 0,
+      "maturityRequired": 3,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Automatically categorize and route support tickets",
+        "Extract data from invoices or receipts",
+        "Generate weekly performance reports from data"
+      ]
+    },
+    {
+      "id": "proposal-drafting",
+      "title": "Proposal and Content Drafting",
+      "description": "AI helps create first drafts of proposals, marketing content, or client materials for human review and refinement.",
+      "baseImpact": 7,
+      "customerTrustRisk": 1,
+      "maturityRequired": 2,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Draft initial project proposals based on requirements",
+        "Create blog post outlines and first drafts",
+        "Generate case study templates from project data"
+      ]
+    },
+    {
+      "id": "decision-support",
+      "title": "Decision Support Reporting",
+      "description": "AI analyzes data patterns and generates insights to support strategic decision-making.",
+      "baseImpact": 8,
+      "customerTrustRisk": 0,
+      "maturityRequired": 3,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Identify trends in customer feedback",
+        "Analyze sales data for patterns",
+        "Flag anomalies in operational metrics"
+      ]
+    },
+    {
+      "id": "opt-in-faq-assistant",
+      "title": "Opt-In FAQ Assistant",
+      "description": "A customer-facing AI that answers common questions, clearly labeled as AI, with explicit opt-in and easy escalation to humans.",
+      "baseImpact": 6,
+      "customerTrustRisk": 3,
+      "maturityRequired": 4,
+      "customerFacing": true,
+      "requiresOptIn": true,
+      "examples": [
+        "Answer hours, location, and policy questions",
+        "Provide order status updates",
+        "Guide customers through basic troubleshooting"
+      ]
+    },
+    {
+      "id": "personalized-recommendations",
+      "title": "Personalized Product Recommendations",
+      "description": "AI suggests products or services based on browsing history or past purchases, with transparency about how recommendations are made.",
+      "baseImpact": 5,
+      "customerTrustRisk": 2,
+      "maturityRequired": 4,
+      "customerFacing": true,
+      "requiresOptIn": true,
+      "examples": [
+        "Suggest related products during checkout",
+        "Recommend content based on past views",
+        "Highlight services matching customer needs"
+      ]
+    },
+    {
+      "id": "support-chatbot",
+      "title": "Open-Ended Support Chatbot",
+      "description": "An AI chatbot that handles complex, open-ended customer support queries without clear guardrails. High risk of generating incorrect or frustrating responses.",
+      "baseImpact": 4,
+      "customerTrustRisk": 5,
+      "maturityRequired": 5,
+      "customerFacing": true,
+      "requiresOptIn": false,
+      "examples": [
+        "Attempt to resolve technical issues",
+        "Handle complaints or complex situations",
+        "Provide advice on product selection"
+      ]
+    },
+    {
+      "id": "lead-qualification",
+      "title": "Lead Qualification and Routing",
+      "description": "AI analyzes incoming inquiries and routes them to the right team member based on content, urgency, or fit.",
+      "baseImpact": 7,
+      "customerTrustRisk": 0,
+      "maturityRequired": 2,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Score and prioritize sales leads",
+        "Route support tickets to appropriate specialist",
+        "Flag high-value opportunities for immediate attention"
+      ]
+    },
+    {
+      "id": "inventory-forecasting",
+      "title": "Inventory and Demand Forecasting",
+      "description": "AI predicts future demand to optimize inventory levels and reduce waste or stockouts.",
+      "baseImpact": 8,
+      "customerTrustRisk": 0,
+      "maturityRequired": 4,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Predict seasonal demand fluctuations",
+        "Optimize reorder points and quantities",
+        "Identify slow-moving inventory"
+      ]
+    },
+    {
+      "id": "meeting-preparation",
+      "title": "Meeting Preparation and Briefing",
+      "description": "AI compiles relevant background information, past interactions, and talking points before client or internal meetings.",
+      "baseImpact": 6,
+      "customerTrustRisk": 0,
+      "maturityRequired": 2,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Summarize past client communications",
+        "Gather relevant project status before reviews",
+        "Create briefing packets for sales calls"
+      ]
+    },
+    {
+      "id": "content-moderation",
+      "title": "Content Moderation and Filtering",
+      "description": "AI reviews user-generated content to flag inappropriate material for human review.",
+      "baseImpact": 7,
+      "customerTrustRisk": 1,
+      "maturityRequired": 3,
+      "customerFacing": false,
+      "requiresOptIn": false,
+      "examples": [
+        "Flag potentially inappropriate comments",
+        "Identify spam or fraudulent submissions",
+        "Prioritize content requiring human review"
+      ]
+    }
+  ]
+}

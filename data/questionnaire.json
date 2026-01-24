@@ -1,0 +1,322 @@
+{
+  "questions": [
+    {
+      "id": "business-type",
+      "question": "What type of business do you run?",
+      "options": [
+        {
+          "id": "professional-services",
+          "label": "Professional Services (consulting, legal, accounting)",
+          "signals": {
+            "proposal-drafting": 2,
+            "meeting-preparation": 2,
+            "email-drafting": 1,
+            "knowledge-base-summarization": 1
+          }
+        },
+        {
+          "id": "ecommerce",
+          "label": "E-commerce or Retail",
+          "signals": {
+            "inventory-forecasting": 2,
+            "personalized-recommendations": 2,
+            "opt-in-faq-assistant": 1,
+            "process-automation": 1
+          }
+        },
+        {
+          "id": "saas",
+          "label": "SaaS or Technology",
+          "signals": {
+            "support-chatbot": 1,
+            "opt-in-faq-assistant": 2,
+            "knowledge-base-summarization": 2,
+            "decision-support": 1
+          }
+        },
+        {
+          "id": "local-business",
+          "label": "Local Service Business (restaurant, clinic, shop)",
+          "signals": {
+            "opt-in-faq-assistant": 2,
+            "lead-qualification": 1,
+            "email-drafting": 1,
+            "process-automation": 1
+          }
+        },
+        {
+          "id": "agency",
+          "label": "Creative or Marketing Agency",
+          "signals": {
+            "proposal-drafting": 2,
+            "email-drafting": 2,
+            "meeting-preparation": 1,
+            "decision-support": 1
+          }
+        },
+        {
+          "id": "other",
+          "label": "Other",
+          "signals": {}
+        }
+      ]
+    },
+    {
+      "id": "time-drain",
+      "question": "What's your biggest time drain right now?",
+      "options": [
+        {
+          "id": "admin-tasks",
+          "label": "Administrative tasks and paperwork",
+          "signals": {
+            "process-automation": 3,
+            "email-drafting": 2,
+            "proposal-drafting": 1
+          }
+        },
+        {
+          "id": "customer-questions",
+          "label": "Answering the same customer questions repeatedly",
+          "signals": {
+            "opt-in-faq-assistant": 3,
+            "knowledge-base-summarization": 2,
+            "support-chatbot": 1
+          }
+        },
+        {
+          "id": "reporting",
+          "label": "Creating reports and analyzing data",
+          "signals": {
+            "decision-support": 3,
+            "process-automation": 2,
+            "knowledge-base-summarization": 1
+          }
+        },
+        {
+          "id": "proposals",
+          "label": "Writing proposals, quotes, or content",
+          "signals": {
+            "proposal-drafting": 3,
+            "email-drafting": 2,
+            "meeting-preparation": 1
+          }
+        },
+        {
+          "id": "finding-info",
+          "label": "Finding information scattered across tools",
+          "signals": {
+            "knowledge-base-summarization": 3,
+            "decision-support": 2,
+            "meeting-preparation": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "pain-point",
+      "question": "What problem would make the biggest difference if solved?",
+      "options": [
+        {
+          "id": "speed-response",
+          "label": "Responding to customers faster",
+          "signals": {
+            "opt-in-faq-assistant": 2,
+            "email-drafting": 2,
+            "lead-qualification": 1,
+            "support-chatbot": 1
+          }
+        },
+        {
+          "id": "team-efficiency",
+          "label": "Making my team more efficient",
+          "signals": {
+            "process-automation": 2,
+            "knowledge-base-summarization": 2,
+            "email-drafting": 1
+          }
+        },
+        {
+          "id": "better-decisions",
+          "label": "Making better-informed decisions",
+          "signals": {
+            "decision-support": 3,
+            "knowledge-base-summarization": 1,
+            "inventory-forecasting": 1
+          }
+        },
+        {
+          "id": "reduce-errors",
+          "label": "Reducing errors and inconsistencies",
+          "signals": {
+            "process-automation": 3,
+            "content-moderation": 1,
+            "lead-qualification": 1
+          }
+        },
+        {
+          "id": "scale-capacity",
+          "label": "Scaling without hiring",
+          "signals": {
+            "process-automation": 2,
+            "opt-in-faq-assistant": 2,
+            "lead-qualification": 1,
+            "email-drafting": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "technical-capability",
+      "question": "How would you describe your technical capability?",
+      "options": [
+        {
+          "id": "beginner",
+          "label": "Beginner - I use basic tools but avoid technical complexity",
+          "capabilityLevel": 1,
+          "signals": {
+            "email-drafting": 1,
+            "proposal-drafting": 1
+          }
+        },
+        {
+          "id": "intermediate",
+          "label": "Intermediate - Comfortable with cloud tools and integrations",
+          "capabilityLevel": 2,
+          "signals": {
+            "knowledge-base-summarization": 1,
+            "process-automation": 1,
+            "lead-qualification": 1
+          }
+        },
+        {
+          "id": "advanced",
+          "label": "Advanced - Can implement APIs and custom workflows",
+          "capabilityLevel": 3,
+          "signals": {
+            "process-automation": 2,
+            "decision-support": 1,
+            "inventory-forecasting": 1
+          }
+        },
+        {
+          "id": "expert",
+          "label": "Expert - Have technical team or strong development experience",
+          "capabilityLevel": 4,
+          "signals": {
+            "opt-in-faq-assistant": 1,
+            "personalized-recommendations": 1,
+            "inventory-forecasting": 1
+          }
+        },
+        {
+          "id": "professional",
+          "label": "Professional - Dedicated technical staff and ongoing maintenance capacity",
+          "capabilityLevel": 5,
+          "signals": {
+            "support-chatbot": 1,
+            "personalized-recommendations": 1,
+            "content-moderation": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "primary-goal",
+      "question": "What's your primary goal for using AI?",
+      "options": [
+        {
+          "id": "save-time",
+          "label": "Save time on repetitive tasks",
+          "signals": {
+            "process-automation": 3,
+            "email-drafting": 2,
+            "proposal-drafting": 1
+          }
+        },
+        {
+          "id": "improve-quality",
+          "label": "Improve consistency and quality",
+          "signals": {
+            "content-moderation": 2,
+            "process-automation": 2,
+            "decision-support": 1
+          }
+        },
+        {
+          "id": "better-insights",
+          "label": "Get better insights from data",
+          "signals": {
+            "decision-support": 3,
+            "inventory-forecasting": 2,
+            "knowledge-base-summarization": 1
+          }
+        },
+        {
+          "id": "customer-experience",
+          "label": "Enhance customer experience",
+          "signals": {
+            "opt-in-faq-assistant": 2,
+            "personalized-recommendations": 2,
+            "lead-qualification": 1
+          }
+        },
+        {
+          "id": "reduce-costs",
+          "label": "Reduce operational costs",
+          "signals": {
+            "process-automation": 3,
+            "inventory-forecasting": 2,
+            "lead-qualification": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "customer-interaction",
+      "question": "How do you want AI to interact with your customers?",
+      "options": [
+        {
+          "id": "no-customer-facing",
+          "label": "I don't want AI facing customers directly",
+          "signals": {
+            "email-drafting": 2,
+            "process-automation": 2,
+            "knowledge-base-summarization": 1,
+            "decision-support": 1,
+            "meeting-preparation": 1,
+            "support-chatbot": -10,
+            "opt-in-faq-assistant": -5,
+            "personalized-recommendations": -3
+          }
+        },
+        {
+          "id": "simple-assistance",
+          "label": "Simple assistance with clear AI labeling and opt-in",
+          "signals": {
+            "opt-in-faq-assistant": 3,
+            "personalized-recommendations": 1,
+            "support-chatbot": -5
+          }
+        },
+        {
+          "id": "full-automation",
+          "label": "Full automation where appropriate, with escalation paths",
+          "signals": {
+            "support-chatbot": 2,
+            "opt-in-faq-assistant": 2,
+            "personalized-recommendations": 2
+          }
+        },
+        {
+          "id": "unsure",
+          "label": "I'm not sure what's appropriate",
+          "signals": {
+            "opt-in-faq-assistant": 1,
+            "process-automation": 1,
+            "knowledge-base-summarization": 1
+          }
+        }
+      ]
+    }
+  ]
+}
