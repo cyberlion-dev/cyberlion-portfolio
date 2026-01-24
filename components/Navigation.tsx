@@ -23,8 +23,7 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "/#services", label: "Services" },
-    { href: "/ai-automation", label: "AI & Automation" },
+    { href: "/portfolio", label: "Portfolio" },
     { href: "/#contact", label: "Contact" },
   ];
 

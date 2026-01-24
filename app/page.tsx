@@ -1,18 +1,18 @@
-// CyberLion Web Solutions - Business Home Page
+// CyberLion - Web Tools & Service Websites
 
 import type { Metadata } from "next";
 import Navigation from '@/components/Navigation';
-import BusinessHero from '@/components/sections/BusinessHero';
-import TechBanner from '@/components/sections/TechBanner';
-import BusinessServices from '@/components/sections/BusinessServices';
+import NewHero from '@/components/sections/NewHero';
+import FeaturedProjects from '@/components/sections/FeaturedProjects';
+import NewServices from '@/components/sections/NewServices';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 
 export const metadata: Metadata = {
-  title: "CyberLion Web Solutions | IT Services & Web Development Phoenix",
+  title: "CyberLion | Web Development",
   description:
-    "WiFi setup, Starlink installation, network troubleshooting, and modern websites for homes and small businesses in Phoenix, Chandler, Gilbert, and Mesa. Fast turnaround, honest pricing.",
-  keywords: "WiFi setup Phoenix, Starlink installation Arizona, network troubleshooting, web development Phoenix, IT services Chandler, home network setup, small business IT",
+    "Custom web applications and service websites. From quote calculators to full service websites.",
+  keywords: "web development, web tools, custom web applications, service websites",
 };
 
 export default function Home() {
@@ -20,9 +20,9 @@ export default function Home() {
     <>
       <Navigation />
       <main className="min-h-screen overflow-x-hidden w-full">
-        <BusinessHero />
-        <TechBanner />
-        <BusinessServices />
+        <NewHero />
+        <FeaturedProjects />
+        <NewServices />
         <Contact />
         <Footer />
       </main>
