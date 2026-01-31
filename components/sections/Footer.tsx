@@ -9,18 +9,19 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { label: "Local IT Services", href: "/#services" },
-      { label: "Web Development", href: "/#services" },
-      { label: "AI & Automation", href: "/ai-automation" },
+      { label: "Websites & Web Apps", href: "/#services" },
+      { label: "Hosting & Domains", href: "/#services" },
+      { label: "SOHO Networking", href: "/#services" },
+      { label: "Cybersecurity", href: "/#services" },
     ],
-    projects: [
+    resources: [
       { label: "Portfolio", href: "/portfolio" },
-      { label: "Risk Analyzer", href: "/risk-analyzer" },
-      { label: "AI Solutions", href: "/ai-solutions" },
-      { label: "AI-Amplified Team", href: "/ai-amplified-team" },
+      { label: "Free Consultation", href: "/#contact" },
+      { label: "Get a Quote", href: "/#contact" },
     ],
     company: [
-      { label: "About", href: "/#about" },
+      { label: "About", href: "/#home" },
+      { label: "Services", href: "/#services" },
       { label: "Contact", href: "/#contact" },
     ],
   };
@@ -36,10 +37,10 @@ export default function Footer() {
               <h3 className="font-bold text-lg">CyberLion</h3>
             </div>
             <p className="text-sm text-muted-foreground mb-6">
-              Technology that just works.
+              Local IT services that just work. No geek speak, no runaround—just solutions.
             </p>
             <div className="space-y-3 text-sm">
-              <a href="tel:+14803605964" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+14803605964" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <span>(480) 360-5964</span>
               </a>
@@ -71,12 +72,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Projects */}
+          {/* Resources */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Projects</h3>
+            <h3 className="font-semibold text-foreground mb-4">Resources</h3>
             <ul className="space-y-2">
-              {footerLinks.projects.map((link) => (
-                <li key={link.href}>
+              {footerLinks.resources.map((link, index) => (
+                <li key={`resource-${index}`}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -110,10 +111,10 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} CyberLion Web Solutions. All rights reserved.
+              &copy; {currentYear} CyberLion IT Services. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
-              Made with ❤️ in Chandler, AZ
+              Proudly serving Chandler, AZ and the East Valley
             </p>
           </div>
         </div>

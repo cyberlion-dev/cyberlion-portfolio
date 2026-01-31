@@ -1,18 +1,17 @@
-// CyberLion - Web Tools & Service Websites
+// CyberLion - Local IT Services & Web Solutions
 
 import type { Metadata } from "next";
 import Navigation from '@/components/Navigation';
 import NewHero from '@/components/sections/NewHero';
-import FeaturedProjects from '@/components/sections/FeaturedProjects';
 import NewServices from '@/components/sections/NewServices';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 
 export const metadata: Metadata = {
-  title: "CyberLion | Web Development",
+  title: "CyberLion | IT Services & Web Development | Chandler, AZ",
   description:
-    "Custom web applications and service websites. From quote calculators to full service websites.",
-  keywords: "web development, web tools, custom web applications, service websites",
+    "Local IT services in Chandler, AZ. Websites, web applications, hosting, SOHO networking, and cybersecurity assessments. No geek speak, just solutions that work.",
+  keywords: "IT services Chandler AZ, web development, website design, small business IT, SOHO networking, cybersecurity assessment, web hosting, local tech support",
 };
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
       <Navigation />
       <main className="min-h-screen overflow-x-hidden w-full">
         <NewHero />
-        <FeaturedProjects />
         <NewServices />
         <Contact />
         <Footer />

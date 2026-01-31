@@ -163,11 +163,10 @@ export default function Contact() {
     <section ref={sectionRef} id="contact" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="container mx-auto max-w-6xl w-full">
         <h2 className="contact-title text-4xl md:text-5xl font-bold text-center mb-6 break-words">
-          Let&apos;s Work Together
+          Let&apos;s Get Your Tech Sorted
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-16 break-words px-2">
-          Have a project in mind? I&apos;d love to hear about it. Drop me a message and let&apos;s create
-          something amazing together.
+          Whether it&apos;s a quick question or a full project, I&apos;m here to help. Give me a call or send a message—I respond fast.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
