@@ -127,7 +127,7 @@ export default function NewHero() {
             {/* Tagline */}
             <div className="hero-tagline mb-4">
               <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                Local IT Services in Chandler, AZ
+                IT Services for Small Business
               </span>
             </div>
 

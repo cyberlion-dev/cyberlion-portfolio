@@ -155,7 +155,7 @@ export default function Contact() {
     {
       icon: <MapPin size={24} />,
       title: 'Location',
-      details: 'Chandler, AZ, USA',
+      details: 'Remote & On-Site Available',
     },
   ];
 

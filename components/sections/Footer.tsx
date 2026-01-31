@@ -50,7 +50,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>Chandler, AZ</span>
+                <span>Remote & On-Site</span>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function Footer() {
               &copy; {currentYear} CyberLion IT Services. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
-              Proudly serving Chandler, AZ and the East Valley
+              Serving clients nationwide
             </p>
           </div>
         </div>

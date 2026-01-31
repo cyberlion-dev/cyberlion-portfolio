@@ -1,4 +1,4 @@
-// CyberLion - Local IT Services & Web Solutions
+// CyberLion - IT Services & Web Solutions
 
 import type { Metadata } from "next";
 import Navigation from '@/components/Navigation';
@@ -8,10 +8,10 @@ import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 
 export const metadata: Metadata = {
-  title: "CyberLion | IT Services & Web Development | Chandler, AZ",
+  title: "CyberLion | IT Services & Web Development",
   description:
-    "Local IT services in Chandler, AZ. Websites, web applications, hosting, SOHO networking, and cybersecurity assessments. No geek speak, just solutions that work.",
-  keywords: "IT services Chandler AZ, web development, website design, small business IT, SOHO networking, cybersecurity assessment, web hosting, local tech support",
+    "Websites, web applications, hosting, SOHO networking, and cybersecurity assessments. No geek speak, just solutions that work.",
+  keywords: "IT services, web development, website design, small business IT, SOHO networking, cybersecurity assessment, web hosting, tech support",
 };
 
 export default function Home() {
